@@ -65,7 +65,59 @@ router.post('/filtro/:filter', function(req, res, next) {
                   console.log("error connected whit connection id is " + err);
                 })
               });
-            } else {
+            } else if (req.params.filter == 'precio') {
+              conn.query('SELECT * FROM hotels WHERE price LIKE "%' + req.body.data +'%"')
+              .then(response => {
+                res.send(response);
+                conn.end()
+                .then(() => {
+                  console.log("closed connection mariadb");
+                  next()
+                })
+                .catch(err => {
+                  console.log("error connected whit connection id is " + err);
+                })
+              });
+            } else if (req.params.filter == 'pais') {
+              conn.query('SELECT * FROM hotels WHERE country LIKE "%' + req.body.data +'%"')
+              .then(response => {
+                res.send(response);
+                conn.end()
+                .then(() => {
+                  console.log("closed connection mariadb");
+                  next()
+                })
+                .catch(err => {
+                  console.log("error connected whit connection id is " + err);
+                })
+              });
+            } else if (req.params.filter == 'cuidad') {
+              conn.query('SELECT * FROM hotels WHERE city LIKE "%' + req.body.data +'%"')
+              .then(response => {
+                res.send(response);
+                conn.end()
+                .then(() => {
+                  console.log("closed connection mariadb");
+                  next()
+                })
+                .catch(err => {
+                  console.log("error connected whit connection id is " + err);
+                })
+              });
+            } else if (req.params.filter == 'estrellas') {
+              conn.query('SELECT * FROM hotels WHERE stars LIKE "%' + req.body.data +'%"')
+              .then(response => {
+                res.send(response);
+                conn.end()
+                .then(() => {
+                  console.log("closed connection mariadb");
+                  next()
+                })
+                .catch(err => {
+                  console.log("error connected whit connection id is " + err);
+                })
+              });
+            }else {
               res.status(400).send('filtro ' + req.params.filter +' aún no es soportado');
             }
         })
