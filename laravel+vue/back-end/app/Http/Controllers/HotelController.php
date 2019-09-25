@@ -14,7 +14,14 @@ class HotelController extends Controller
      */
     public function index()
     {
-        //
+        try {
+          $message = Hotel::all();
+          $code = 200;
+        } catch (\Exception $e) {
+          $message = $e;
+          $code = 500;
+        }
+        return response($message, $code);
     }
 
     /**

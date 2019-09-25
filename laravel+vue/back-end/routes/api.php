@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::resource('hoteles', 'API\HotelController');
+Route::post('hoteles/filtro/{filter}', 'API\HotelController@filter');
+Route::get('hoteles/filtro/{filter}', 'API\HotelController@filter');
