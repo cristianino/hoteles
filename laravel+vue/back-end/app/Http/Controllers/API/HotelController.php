@@ -148,7 +148,7 @@ class HotelController extends Controller
     {
       try {
         if (!$request['data']) {
-          return response('Es necesario enviar los parametors en una variable con en nombre data', 500);
+          return response('Es necesario enviar los parametros en una variable con en nombre data', 500);
         }
         switch ($filter) { //nombre, precio, pais, ciudad, estrellas
           case 'nombre':

@@ -32,6 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Use cors
 app.use(cors())
 
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
