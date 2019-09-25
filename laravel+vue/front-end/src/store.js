@@ -10,7 +10,8 @@ export default new Vuex.Store({
     },
     api: {
       url: 'http://localhost:8000/'
-    }
+    },
+    hotels: []
   },
   mutations: {
 

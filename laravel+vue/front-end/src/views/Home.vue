@@ -1,7 +1,9 @@
 <template>
-  <div>
-  <hoteles/>
-  </div>
+  <container>
+    <row>
+      <hoteles col/>
+    </row>
+  </container>
 </template>
 
 <script>
