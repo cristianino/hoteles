@@ -2,7 +2,9 @@
   <v-container
     fluid
   >
+    <v-card>
     <search/>
+    </v-card>
     <hoteles/>
   </v-container>
 </template>

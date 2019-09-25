@@ -43,7 +43,26 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+          $image = $request->file('image');
+          $hotel = new Hotel ();
+          $hotel->name = $request['name'];
+          $hotel->description = $request['description'];
+          $hotel->price = $request['price'];
+          $hotel->address = $request['address'];
+          $hotel->country = $request['country'];
+          $hotel->city = $request['city'];
+          $hotel->stars = $request['stars'];
+          $hotel->image = $image->store('hotel', 'public');
+          $hotel->save();
+          $message = $hotel->id;
+          $code = 200;
+        } catch (\Exception $e) {
+          $message = $e;
+          $code = 500;
+        }
+        return response($message, $code);
+
     }
 
     /**
@@ -84,7 +103,25 @@ class HotelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      try {
+        $image = $request->file('image');
+        $hotel = Hotel::find($id);
+        $hotel->name = $request['name'];
+        $hotel->description = $request['description'];
+        $hotel->price = $request['price'];
+        $hotel->address = $request['address'];
+        $hotel->country = $request['country'];
+        $hotel->city = $request['city'];
+        $hotel->stars = $request['stars'];
+        $hotel->image = $image->store('hotel', 'public');
+        $hotel->save();
+        $message = $hotel->id;
+        $code = 200;
+      } catch (\Exception $e) {
+        $message = $e;
+        $code = 500;
+      }
+      return response($message, $code);
     }
 
     /**
@@ -95,7 +132,16 @@ class HotelController extends Controller
      */
     public function destroy($id)
     {
-        //
+      try {
+        $hotel = Hotel::find($id);
+        $hotel->delete();
+        $message = $hotel->id;
+        $code = 200;
+      } catch (\Exception $e) {
+        $message = $e;
+        $code = 500;
+      }
+      return response($message, $code);
     }
 
     public function filter($filter, Request $request)

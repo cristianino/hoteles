@@ -16,6 +16,7 @@
       color="white"
       hide-details
       v-model="search"
+      v-on:keyup.enter="getHotels"
     ></v-text-field>
     </v-col>
     <v-col

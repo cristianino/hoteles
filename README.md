@@ -16,7 +16,7 @@ Para copiar el archivo de entorno `.env` y usar los datos por defecto ejecute `$
 
 El seeder es para la tabla `hotels` ejecute `$ php artisan migrate --seed`
 
-### Consumo de api y filtro de hoteles
+### Consumo de api (CRUD disponible) y filtro de hoteles
 
 La ruta de filtros es `hoteles/filtro/{filtro}` tipo post
 en donde el parámetro `{filtro}` define el dato de filtro
