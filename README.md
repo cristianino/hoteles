@@ -37,3 +37,5 @@ El proyecto para producción está en la carpeta distr o ejecutando `$ npm run b
 
 Solo es necesario ejecutar el comando `$ npm run start` en el directorio.
 Tiene las mismas funciones y nomenclatura que la versión en laravel a excepción del api CRUD
+
+La base de datos es la misma que se genero con laravel por tema prácticos
