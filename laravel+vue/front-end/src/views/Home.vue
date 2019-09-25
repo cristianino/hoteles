@@ -1,9 +1,10 @@
 <template>
-  <container>
-    <row>
-      <hoteles col/>
-    </row>
-  </container>
+  <v-container
+    class="fill-height"
+    fluid
+  >
+    <hoteles/>
+  </v-container>
 </template>
 
 <script>

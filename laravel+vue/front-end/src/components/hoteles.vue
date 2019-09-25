@@ -1,12 +1,20 @@
 <template>
-  <div
-    v-if="$store.state.hotels"
+<v-row
+  align="center"
+  justify="center"
+  v-if="$store.state.hotels"
+>
+  <v-col
+    cols="12"
+    sm="12"
+    md="4"
+    lg="3"
+    v-for="hotel in $store.state.hotels"
+    :key="hotel.id"
   >
     <v-card
        :loading="loading"
        max-width="374"
-       v-for="hotel in $store.state.hotels"
-       :key="hotel.id"
      >
        <v-img
          height="250"
@@ -46,10 +54,15 @@
          </v-btn>
        </v-card-actions>
      </v-card>
-  </div>
-  <div v-else>
+  </v-col>
+  </v-row>
+  <v-row
+  align="center"
+  justify="center"
+   v-else
+   >
     <p>Sin Hoteles</p>
-  </div>
+  </v-row>
 </template>
 <script>
 const axios = require('axios');
