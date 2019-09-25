@@ -7,6 +7,9 @@ export default new Vuex.Store({
   state: {
     app: {
       title: 'Hoteles'
+    },
+    api: {
+      url: 'http://localhost:8000/'
     }
   },
   mutations: {
