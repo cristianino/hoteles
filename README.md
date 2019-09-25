@@ -32,3 +32,8 @@ El filtro por defecto según la nomenclatura API REST también se puede buscar c
 `$ npm run serve`
 
 El proyecto para producción está en la carpeta distr o ejecutando `$ npm run build`
+
+## Para Nodejs + vue
+
+Solo es necesario ejecutar el comando `$ npm run start` en el directorio.
+Tiene las mismas funciones y nomenclatura que la versión en laravel a excepción del api CRUD
