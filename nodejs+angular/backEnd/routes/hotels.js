@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 const mariadb = require('mariadb');
 
-
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   mariadb.createConnection({

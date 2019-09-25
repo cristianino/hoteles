@@ -9,6 +9,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var hotelsRouter = require('./routes/hotels');
 
+var cors = require('cors')
+
 var app = express();
 
 // view engine setup
@@ -26,6 +28,9 @@ app.use(sassMiddleware({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Use cors
+app.use(cors())
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
