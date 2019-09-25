@@ -65,7 +65,7 @@
   </v-row>
 </template>
 <script>
-const axios = require('axios');
+const axios = require('axios')
 export default {
   data: () => ({
     loading: false,
@@ -90,5 +90,3 @@ export default {
    }
 };
 </script>
-<style lang="scss">
-</style>

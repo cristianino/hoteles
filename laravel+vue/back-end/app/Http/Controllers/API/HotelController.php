@@ -106,11 +106,11 @@ class HotelController extends Controller
         }
         switch ($filter) { //nombre, precio, pais, ciudad, estrellas
           case 'nombre':
-            $message = Hotel::where('name', $request['data'])->get();
+            $message = Hotel::where('name', "LIKE", "%{$request['data']}%")->get();
             $code = 200;
             break;
           case 'precio':
-            $message = Hotel::where('price', $request['data'])->get();
+            $message = Hotel::where('price', "LIKE", "%{$request['data']}%")->get();
             $code = 200;
             break;
           case 'pais':

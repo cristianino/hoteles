@@ -23,6 +23,7 @@
   >
     <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     <v-toolbar-title @click="$router.push('/')" class="title-app">{{$store.state.app.title}}</v-toolbar-title>
+
   </v-app-bar>
 
   <v-content>
